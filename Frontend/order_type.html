@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Order Type</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        .button-group button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .on-table-btn {
+            background-color: #5cb85c;
+            color: white;
+        }
+        .takeaway-btn {
+            background-color: #007bff;
+            color: white;
+        }
+        .button-group button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome! How would you like to order?</h2>
+        <div class="button-group">
+            <button class="on-table-btn" onclick="goToOrder('on_table')">Order for Table</button>
+            <button class="takeaway-btn" onclick="goToOrder('takeaway')">Takeaway Order</button>
+        </div>
+    </div>
+
+    <script>
+        function goToOrder(orderType) {
+            if (orderType === 'takeaway') {
+                window.location.href = 'index.html?order_type=takeaway';
+            } else if (orderType === 'on_table') {
+                window.location.href = 'index.html'; // Existing index.html for on-table orders
+            }
+        }
+    </script>
+</body>
+</html>

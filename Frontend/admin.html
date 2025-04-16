@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Delicious Restaurant</h1>
+            <p>Admin Dashboard</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="dashboard-header">
+            <h2>Order Management</h2>
+            <div class="actions">
+                <button id="refreshOrders" class="refresh-btn">Refresh Orders</button>
+                <a href="index.html" class="view-site-btn">View Customer Site</a>
+            </div>
+        </div>
+
+        <div class="order-tabs">
+            <button class="tab-btn active" data-status="pending">Pending</button>
+            <button class="tab-btn" data-status="preparing">Preparing</button>
+            <button class="tab-btn" data-status="ready">Ready</button>
+            <button class="tab-btn" data-status="delivered">Delivered</button>
+        </div>
+
+        <div class="orders-container">
+            <div id="pendingOrders" class="order-list active">
+                <h3>Pending Orders</h3>
+                <div class="orders" data-status="pending">
+                    <p class="no-orders">No pending orders</p>
+                </div>
+            </div>
+
+            <div id="preparingOrders" class="order-list">
+                <h3>Preparing</h3>
+                <div class="orders" data-status="preparing">
+                    <p class="no-orders">No orders in preparation</p>
+                </div>
+            </div>
+
+            <div id="readyOrders" class="order-list">
+                <h3>Ready for Delivery</h3>
+                <div class="orders" data-status="ready">
+                    <p class="no-orders">No orders ready for delivery</p>
+                </div>
+            </div>
+
+            <div id="deliveredOrders" class="order-list">
+                <h3>Delivered Orders</h3>
+                <div class="orders" data-status="delivered">
+                    <p class="no-orders">No delivered orders</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="orderDetails" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Order Details</h2>
+            <div class="order-info">
+                <p><strong>Order #:</strong> <span id="detailOrderNumber"></span></p>
+                <p><strong>Table #:</strong> <span id="detailTableNumber"></span></p>
+                <p><strong>Customer:</strong> <span id="detailCustomerName"></span></p>
+                <p><strong>Time:</strong> <span id="detailTimestamp"></span></p>
+                <p><strong>Status:</strong> <span id="detailStatus"></span></p>
+            </div>
+            <h3>Items</h3>
+            <div id="detailItems" class="detail-items"></div>
+            <div class="detail-total">
+                <p>Total: <span id="detailTotal"></span></p>
+            </div>
+            <div class="order-actions">
+                <button id="startPreparingBtn" class="action-btn preparing-btn">Start Preparing</button>
+                <button id="markReadyBtn" class="action-btn ready-btn">Mark as Ready</button>
+                <button id="markDeliveredBtn" class="action-btn delivered-btn">Mark as Delivered</button>
+                <button id="deleteOrderBtn" class="action-btn delete-btn">Delete Order</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Delicious Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>
+

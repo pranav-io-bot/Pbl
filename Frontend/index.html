@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Ordering System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Delicious Restaurant</h1>
+            <p>Order your favorite food online</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="order-section">
+            <h2>Place Your Order</h2>
+            <form id="orderForm">
+                <div class="form-group" id="tableNumberGroup">
+                    <label for="tableNumber">Table Number:</label>
+                    <input type="number" id="tableNumber" min="1" max="50">
+                </div>
+
+                <div class="form-group">
+                    <label for="customerName">Your Name:</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerNumber">Your Phone Number:</label>
+                    <input type="number" id="customerNumber" required style="font-size: 24px; padding: 5px; font-family: sans-serif;">
+                </div>
+
+                <h3>Menu</h3>
+                <div class="menu-categories">
+                    <button type="button" class="category-btn active" data-category="starters">Starters</button>
+                    <button type="button" class="category-btn" data-category="main-course">Main Course</button>
+                    <button type="button" class="category-btn" data-category="desserts">Desserts</button>
+                    <button type="button" class="category-btn" data-category="beverages">Beverages</button>
+                </div>
+
+                <div class="menu-items" id="menuItems">
+                    <div class="category-items" data-category="starters">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Garlic Bread</h4>
+                                <p>Freshly baked bread with garlic butter</p>
+                                <span class="price">₹90</span>
+                            </div>
+                            <div class="item-actions">
+                                <button type="button" class="add-btn" data-id="1" data-name="Garlic Bread" data-price="90">Add</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Masala Papad</h4>
+                                <p>Serving papad with many more Masalas</p>
+                                <span class="price">₹90</span>
+                            </div>
+                            <div class="item-actions">
+                                <button type="button" class="add-btn" data-id="2" data-name="Masala Papad" data-price="90">Add</button>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Soup</h4>
+                                <p>Freshly and cream corn soup</p>
+                                <span class="price">₹90</span>
+                            </div>
+                            <div class="item-actions">
+                                <button type="button" class="add-btn" data-id="3" data-name="Soup" data-price="90">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-items" data-category="main-course" style="display: none;">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Margherita Pizza</h4>
+                                <p>Classic pizza with tomato sauce, mozzarella, and basil</p>
+                                <span class="price">₹499</span>
+                            </div>
+                            <div class="item-actions">
+                                <button type="button" class="add-btn" data-id="4" data-name="Margherita Pizza" data-price="499">Add</button>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Butter Naan</h4>
+                                <p>Soft and fluffy naan with butter</p>
+                                <span class="price">₹50</span>
+                            </div>
+                            <div class="item-actions">
+                                <button type="button" class="add-btn" data-id="10" data-name="Butter Naan" data-price="50">Add</button>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Paneer Butter Masala</h4>
+                                <p>Paneer cubes cooked in a creamy tomato gravy</p>
+                                <span class="price">₹300</span>
+                            </div>
+                            <div class="item-actions">
+                                <button type="button" class="add-btn" data-id="11" data-name="Paneer Butter Masala" data-price="300">Add</button>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Butter Chicken</h4>
+                                <p>Classic North Indian dish with a rich buttery tomato gravy</p>
+                                <span class="price">₹350</span>
+                            </div>
+                            <div class="item-actions">
+                                <button type="button" class="add-btn" data-id="12" data-name="Butter Chicken" data-price="350">Add</button>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Jeera Rice</h4>
+                                <p>Fragrant rice tempered with cumin seeds</p>
+                                <span class="price">₹180</span>
+                            </div>
+                            <div class="item-actions">
+                                <button type="button" class="add-btn" data-id="13" data-name="Jeera Rice" data-price="180">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-items" data-category="desserts" style="display: none;">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chocolate Cake</h4>
+                                <p>Rich chocolate cake with vanilla ice cream</p>
+                                <span class="price">₹250</span>
+                            </div>
+                            <div class="item-actions">
+                                <button type="button" class="add-btn" data-id="7" data-name="Chocolate Cake" data-price="250">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-items" data-category="beverages" style="display: none;">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Soft Drinks</h4>
+                                <p>Cola, Lemon, Orange, or Mineral Water</p>
+                                <span class="price">₹99</span>
+                            </div>
+                            <div class="item-actions">
+                                <button type="button" class="add-btn" data-id="9" data-name="Soft Drinks" data-price="99">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <h3>Your Order</h3>
+                    <div id="orderItems" class="order-items">
+                        <p class="empty-order">No items added yet</p>
+                    </div>
+                    <div class="order-total">
+                        <p>Total: <span id="totalAmount">₹0.00</span></p>
+                    </div>
+                    <button type="submit" class="submit-btn">Place Order</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div id="orderConfirmation" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Order Confirmed!</h2>
+            <p>Your order has been sent to the kitchen.</p>
+            <p>Order #: <span id="orderNumber"></span></p>
+            <p id="confirmTableNumberLabel">Table #: <span id="confirmTableNumber"></span></p>
+            <p id="confirmTakeawayLabel" style="display: none;">Order Type: Takeaway</p>
+
+            <button id="closeModal" class="submit-btn">OK</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Delicious Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Get the order type from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderType = urlParams.get('order_type');
+        const tableNumberGroup = document.getElementById('tableNumberGroup');
+
+        if (orderType === 'takeaway') {
+            // Hide the table number input for takeaway
+            tableNumberGroup.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
